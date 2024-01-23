@@ -58,3 +58,18 @@ let tab2 = [...arrayList3];
 
 console.log(tab)
 console.log(tab2)
+
+//arrow function - funkcje strzałkowe 
+function funkcja1(name: string): string {
+    return `cześć ${name}`
+}
+
+let names: string[] = ["sebastian", "damian"]
+
+console.log(names.map(name => `cześć ${name}`));
+
+//aliasy Typu
+
+type myType = string | number;
+
+let variable3: myType = 5;
