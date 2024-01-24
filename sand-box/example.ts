@@ -73,3 +73,39 @@ console.log(names.map(name => `cześć ${name}`));
 type myType = string | number;
 
 let variable3: myType = 5;
+
+// interfejsy a klasy
+
+interface Person {
+    name: string;
+    surame:string;
+}
+
+class Person1{
+    name?: string;
+    surname?: string;
+    constructor(name:string, surname:string){
+        this.name= name,
+        this.surname = surname;
+    }
+    
+    metoda(): void{
+        console.log("Metoda z klasy bazowej");
+    }
+}
+
+class Client extends Person1{
+    isAdult: boolean;
+    constructor(name:string, surname:string, isAdult: boolean){
+        super(name, surname)
+        this.isAdult = isAdult;
+    }
+
+    override metoda(): void{
+     console.log("Metoda z klasy pochodej");
+    }
+}
+
+let osoba2: Person1 = new Person1("Sebastian", "Piątkowski");
+
+osoba2.metoda();
