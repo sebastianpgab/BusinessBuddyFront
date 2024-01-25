@@ -1,3 +1,7 @@
+import { Person, User, IIntroduce } from "sand-box"
+
+// Teraz możesz używać Person, User i IIntroduce
+
 //Jak działa silne typowanie ?
 
 let variableStronglyTyped = 5;
@@ -76,10 +80,10 @@ let variable3: myType = 5;
 
 // interfejsy a klasy
 
-interface Person {
+/*interface Person {
     name: string;
     surame:string;
-}
+}*/
 
 class Person1{
     name?: string;
@@ -109,3 +113,5 @@ class Client extends Person1{
 let osoba2: Person1 = new Person1("Sebastian", "Piątkowski");
 
 osoba2.metoda();
+///
+
