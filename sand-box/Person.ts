@@ -1,12 +1,13 @@
-export class Person{
+export class Person {
     name:string;
-    surname:string;
-    constructor(name:string, surname:string){
+    surname: string;
+    
+    constructor(name:string, surname: string){
         this.name = name;
         this.surname = surname;
     }
 
-    method(){
-        console.log("Method from base class");
+    exampleMethod(){
+        console.log("Overrided method form base class");
     }
 }
