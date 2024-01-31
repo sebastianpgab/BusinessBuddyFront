@@ -20,6 +20,13 @@ import { Component } from '@angular/core';
    <p>----------------</p>
    <h1>Przykłady event bindingu</h1>
    <button (click)="changeFontMethod()" type="button" >Zmień czcionkę</button>
+   <input type="text" (input)="onInputChange($event)"> 
+
+   <p>---------------</p>
+   <h1>Dwukierunkowy binding - ngModel</h1>
+
+   <input type="text" [(ngModel)]= "name">
+
   `,
   styles: [ 
  '.changeColour {color: blue}',
@@ -41,6 +48,10 @@ export class AppComponent {
   this.changeFont = !this.changeFont; 
 }
 
+onInputChange(event: Event){
+   let inputElement = event.target as HTMLInputElement;
+   console.log(inputElement.value)
+}
 
 
 }
