@@ -1,16 +1,17 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
   template: `
 
-   <h1>Przykłady interpolacji</h1>
+   <h3>Przykłady interpolacji</h3>
    <p>Imie {{name.toUpperCase()}}</p>
    <p>Wiek {{25}}</p>
    <p>Jest dorosły {{isAdult}}</p>
 
    <p>----------------</p>
-   <h1>Przykład property bindingu</h1>
+   <h3>Przykład property bindingu</h3>
    <p [class.changeColour] = "isActiv">Dupa</p>
    <button [disabled] = "isActiv">Kliknij</button>
    <div [style.color]="isHighlighted ? 'red' : 'blue'">Kolor</div>
@@ -18,14 +19,28 @@ import { Component } from '@angular/core';
    <input [value]= "name">
 
    <p>----------------</p>
-   <h1>Przykłady event bindingu</h1>
+   <h3>Przykłady event bindingu</h3>
    <button (click)="changeFontMethod()" type="button" >Zmień czcionkę</button>
    <input type="text" (input)="onInputChange($event)"> 
 
    <p>---------------</p>
-   <h1>Dwukierunkowy binding - ngModel</h1>
+   <h3>Dwukierunkowy binding - ngModel</h3>
 
    <input type="text" [(ngModel)]= "name">
+
+   <p>-----------------</p>
+   <h3>Dyrektywy *ngIf</h3>
+
+   <div type="button">
+    <label> <input type="checkbox" [(ngModel)]="isActiv"> Pokaz napis</label>
+   </div>
+
+   <div *ngIf="isActiv; then tekst1 else tekst2"></div>
+   <ng-template #tekst1> <p>Tekst jeden<p> </ng-template>
+   <ng-template #tekst2> <p>Tekst dwa<p> </ng-template>
+
+   <div *ngIf="isActiv"><p>Tekst trzy</p></div>
+
 
   `,
   styles: [ 
@@ -40,7 +55,7 @@ export class AppComponent {
   name = 'Sebastian';
   age = 25
   isAdult = false;
-  isActiv = false;
+  isActiv = true;
   isHighlighted = true;
   changeFont:boolean = true;
 
