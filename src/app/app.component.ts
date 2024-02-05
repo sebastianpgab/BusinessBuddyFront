@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { Customer } from './customer/customer';
 
 
 @Component({
@@ -40,7 +41,29 @@ import { Component} from '@angular/core';
    <ng-template #tekst2> <p>Tekst dwa<p> </ng-template>
 
    <div *ngIf="isActiv"><p>Tekst trzy</p></div>
+   <p>-----------------</p>
+  <h3>Dyrektywa ngSwitch</h3>
 
+  <ng-container [ngSwitch]="age">
+    <ng-container *ngSwitchCase="25">Pierwszy switch</ng-container>
+    <ng-container *ngSwitchCase="24">Drugi switch</ng-container>
+    <ng-container *ngSwitchDefault>nieznany</ng-container>
+  </ng-container>  
+
+  <p>-----------------</p>
+  <h3>Dyrektywa ngFor</h3>
+  <ul>
+    <li *ngFor="let animal of animals">{{animal}}</li>
+  <ul>
+  <p>-----------------</p>
+
+  <p>Imie: {{customer.name}}</p>
+  <p>Nazwisko: {{customer.surName}}</p>
+  <p>Wiek: {{customer.age}}</p>
+
+  <select [(ngModel)]="customer">
+    <option *ngFor="let c of customers" [ngValue] = "c">wybierz klienta: {{c.name}}</option>
+  </select>
 
   `,
   styles: [ 
@@ -58,6 +81,36 @@ export class AppComponent {
   isActiv = true;
   isHighlighted = true;
   changeFont:boolean = true;
+  animals: string[]= ["cat", "dog", "mouse"]
+
+  customers: Customer[] = [
+    {
+     id: 1,
+     name: "sebastian",
+     surName: "piątkowski",
+     age: 25
+     },
+
+     {
+       id: 2,
+       name: "albert",
+       surName: "wąsik",
+       age: 25
+     },
+
+     {
+       id: 3,
+       name: "eugeniusz",
+       surName: "bodo",
+       age: 25
+     }
+
+ ]
+
+  customer: Customer = this.customers[0];
+
+
+  
 
   changeFontMethod() {
   this.changeFont = !this.changeFont; 
