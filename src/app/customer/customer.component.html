@@ -1,0 +1,100 @@
+
+<h2>Informacje o kliencie</h2>
+
+<div class="main-container">
+    <div class="container">
+       <p>11111111111111111111111111111111111111111111qqqqqqqqqqqqqqqqqqqqq1111111111111111111111111111</p>
+    </div>
+    <div class="container">
+        <p>2222222222222222222222222222222222222222222222222222222222222222</p>
+    </div>
+     <div class="container">
+        <p>33333333333333333333333333333333333333333</p>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<h3>Przykłady interpolacji</h3>
+<p>Imie {{name.toUpperCase()}}</p>
+<p>Wiek {{25}}</p>
+<p>Jest dorosły {{isAdult}}</p>
+
+<p>----------------</p>
+<h3>Przykład property bindingu</h3>
+<p [class.changeColour]="isActiv">Dupa</p>
+<button [disabled]="isActiv">Kliknij</button>
+<div [style.color]="isHighlighted ? 'red' : 'blue'">Kolor</div>
+<div [class.changeFont]="changeFont">Tekst Tekst Tekst</div>
+<input [value]="name">
+
+<p>----------------</p>
+<h3>Przykłady event bindingu</h3>
+<button (click)="changeFontMethod()" type="button">Zmień czcionkę</button>
+<input type="text" (input)="onInputChange($event)">
+
+<p>---------------</p>
+<h3>Dwukierunkowy binding - ngModel</h3>
+
+<input type="text" [(ngModel)]="name">
+
+<p>-----------------</p>
+<h3>Dyrektywy *ngIf</h3>
+
+<div type="button">
+    <label> <input type="checkbox" [(ngModel)]="isActiv"> Pokaz napis</label>
+</div>
+
+<div *ngIf="isActiv; then tekst1 else tekst2"></div>
+<ng-template #tekst1>
+    <p>Tekst jeden
+    <p>
+</ng-template>
+<ng-template #tekst2>
+    <p>Tekst dwa
+    <p>
+</ng-template>
+
+<div *ngIf="isActiv">
+    <p>Tekst trzy</p>
+</div>
+<p>-----------------</p>
+<h3>Dyrektywa ngSwitch</h3>
+
+<ng-container [ngSwitch]="age">
+    <ng-container *ngSwitchCase="25">Pierwszy switch</ng-container>
+    <ng-container *ngSwitchCase="24">Drugi switch</ng-container>
+    <ng-container *ngSwitchDefault>nieznany</ng-container>
+</ng-container>
+
+<p>-----------------</p>
+<h3>Dyrektywa ngFor</h3>
+<ul>
+    <li *ngFor="let animal of animals">{{animal}}</li>
+    <ul>
+        <p>-----------------</p>
+
+        <p>Imie: {{customer.name}}</p>
+        <p>Nazwisko: {{customer.surName}}</p>
+        <p>Wiek: {{customer.age}}</p>
+
+        <select [(ngModel)]="customer">
+            <option *ngFor="let c of customers" [ngValue]="c">wybierz klienta: {{c.name}}</option>
+        </select>
+
+        -->
