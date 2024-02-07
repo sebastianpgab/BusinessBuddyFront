@@ -1,8 +1,9 @@
-import { NonNullableFormBuilder } from "@angular/forms";
-
 export interface Customer{
- id: number;
- name: string;
- surName: string;
- age: number;
+ id?: number;
+ firstName: string;
+ lastName: string;
+ taxNumber: number;
+ phoneNumber: string;
+ email: string;
 }
+

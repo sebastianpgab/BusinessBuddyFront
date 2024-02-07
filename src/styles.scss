@@ -1,16 +1,7 @@
-.container {
+.main-container {
     display: flex;
-    text-align: center;
-    justify-content: start;
 }
 
-.container {
-    width: 20%;
-    padding: 10px; 
-    box-sizing: border-box; 
-}
-
-p {
-    width: 30%;
-    word-wrap: break-word;
+.client-info {
+    margin: 20px;
 }
