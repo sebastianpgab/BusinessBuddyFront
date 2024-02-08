@@ -6,18 +6,21 @@ import { FormsModule } from '@angular/forms';
 import { AddressComponent } from './address/address.component';
 import { CustomerComponent } from './customer/customer.component';
 import { AppComponent } from './app.component';
+import { OrderDetailComponent } from './order-detail/order-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerComponent,
-    AddressComponent
+    AddressComponent,
+    OrderDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
   ],
-  providers: []
+  providers: [],
+  bootstrap: [AppComponent] 
 })
 export class AppModule { }

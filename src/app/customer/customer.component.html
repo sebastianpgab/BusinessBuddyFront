@@ -1,13 +1,32 @@
 <h2 style="text-align: center;">Informacje o kliencie</h2>
 
 <div class="main-container">
-    <div class="client-info">
-       <h3>Dane</h3>
+    <div class="div">
+       <h3>Klient:</h3>
        <p>Imie: {{customer.firstName}}</p>
        <p>Nazwisko: {{customer.lastName}}</p>
        <p>Numer indentyfikacji podatkowej: {{customer.taxNumber}}</p>
        <p>Numer telefonu: {{customer.phoneNumber}}</p>
        <p>Email: {{customer.email}}</p>
+    </div>
+
+    <div class="div">
+        <h3>Adres klienta:</h3>
+        <p>Ulica: {{customer.address.street}}</p>
+        
+        <ng-container *ngIf="customer.address.buildingNumber == null &&  customer.address.apartmentNumber == null then noAddress else address"></ng-container>  
+        <ng-template #address>
+            <ng-container *ngIf="customer.address.buildingNumber == null then apartmentNumber else buildingNumber"></ng-container>
+            <ng-template #apartmentNumber>Numer mieszkania: {{customer.address.apartmentNumber }}</ng-template>
+            <ng-template #buildingNumber>Numer domu: {{customer.address.buildingNumber}}</ng-template>
+        </ng-template>
+
+        <ng-template  #noAddress>
+            <p>Numer mieszkania: brak</p>
+        </ng-template>
+
+        <p>Postal code: {{customer.address.postalCode}}</p>
+        <p>Postal code: {{customer.address.city}}</p>
     </div>
 
 </div>
