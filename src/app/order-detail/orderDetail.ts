@@ -1,7 +1,7 @@
 import { Address } from "../address/address";
 
 export interface OrderDetail {
-id: number;
+id?: number;
 orderDate: Date;
 completionDate: Date;
 orderStatus: string;

@@ -9,6 +9,6 @@ export interface Customer{
  phoneNumber: string;
  email: string;
  address: Address;
- orderDetail: OrderDetail;
+ orderDetail: Array<OrderDetail>;
 }
 

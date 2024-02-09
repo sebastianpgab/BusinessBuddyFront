@@ -1,9 +1,10 @@
 .main-container {
     display: flex;
+    justify-content: center;
 }
 
 .div {
-    margin: 5px;
-    padding: 5px;
+    margin: 2%;
+    padding: 2%;
     border: 2px solid;
 }

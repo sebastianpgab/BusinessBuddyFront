@@ -29,6 +29,16 @@
         <p>Postal code: {{customer.address.city}}</p>
     </div>
 
+    <div class="div">
+        <h3>Ostatnie zamówienie</h3>
+        <p>Data zamówienia: {{lastOrder.orderDate | date}}</p>
+        <p>Data zakończenia: {{lastOrder.completionDate | date}}</p>
+        <p>Status zamówienia: {{lastOrder.orderStatus}}</p>
+        <p>Notatki: {{lastOrder.notes}}</p>
+        <p>Metoda płatności: {{lastOrder.paymentMethod}}</p>
+        <p>Płatność końcowa: {{lastOrder.finalAmount}}</p>       
+    </div>
+
 </div>
 
 

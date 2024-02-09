@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { Customer } from './customer';
+import { OrderDetail } from '../order-detail/orderDetail';
 
 
 @Component({
@@ -23,15 +24,22 @@ export class CustomerComponent {
       city: "Warszawa",
       clientId: 1
     },
-    orderDetail:{
+    orderDetail:[{
       id: 1,
       orderDate: new Date(),
       completionDate: new Date(),
       orderStatus: "InProgress",
       notes: "Jakieś notatki",
       paymentMethod: "CreditCard",
-      finalAmount: 4503
+      finalAmount: 4503.90
     }
+    ]
   };
 
+  lastIndex = this.customer.orderDetail.length - 1;
+
+  lastOrder = this.customer.orderDetail[this.lastIndex];
+
+
+  
 }
