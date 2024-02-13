@@ -7,6 +7,9 @@ import { AddressComponent } from './address/address.component';
 import { CustomerComponent } from './customer/customer.component';
 import { AppComponent } from './app.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
+import { CustomerService } from './customer/customer.service';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -19,8 +22,11 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    CustomerService
+  ],
   bootstrap: [AppComponent] 
 })
 export class AppModule { }

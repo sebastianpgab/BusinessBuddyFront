@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { Customer } from './customer';
 import { OrderDetail } from '../order-detail/orderDetail';
+import { CustomerService } from './customer.service';
 
 
 @Component({
@@ -10,35 +11,16 @@ import { OrderDetail } from '../order-detail/orderDetail';
 })
 
 export class CustomerComponent {
+  customer: Customer;
+  lastOrder: OrderDetail;
 
-  customer: Customer = {
-    firstName: "Sebastian",
-    lastName: " Piątkowski",
-    taxNumber: 1235438323,
-    phoneNumber: "796 059 543",
-    email: "sebo12p@wp.pl",
-    address: {
-      id: 1,
-      street: "Dworcowa",
-      postalCode: "05-505",
-      city: "Warszawa",
-      clientId: 1
-    },
-    orderDetail:[{
-      id: 1,
-      orderDate: new Date(),
-      completionDate: new Date(),
-      orderStatus: "InProgress",
-      notes: "Jakieś notatki",
-      paymentMethod: "CreditCard",
-      finalAmount: 4503.90
-    }
-    ]
-  };
+  constructor(private customerService: CustomerService){
+  this.customer = customerService.getCustomer()
+  this.lastOrder = customerService.lastOrder();
+}
 
-  lastIndex = this.customer.orderDetail.length - 1;
 
-  lastOrder = this.customer.orderDetail[this.lastIndex];
+
 
 
   
