@@ -9,23 +9,28 @@ import { AppComponent } from './app.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { CustomerService } from './customer/customer.service';
 import { ToastrModule } from 'ngx-toastr';
-
+import { MessageService } from './message.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CustomerAddComponent } from './customer-add/customer-add.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerComponent,
     AddressComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    CustomerAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ToastrModule.forRoot()
   ],
   providers: [
-    CustomerService
+    CustomerService,
+    MessageService
   ],
   bootstrap: [AppComponent] 
 })

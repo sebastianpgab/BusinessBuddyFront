@@ -11,17 +11,14 @@ import { CustomerService } from './customer.service';
 })
 
 export class CustomerComponent {
-  customer: Customer;
-  lastOrder: OrderDetail;
+  customers: Customer[] | undefined;
+  customer: Customer | undefined;
 
-  constructor(private customerService: CustomerService){
-  this.customer = customerService.getCustomer()
-  this.lastOrder = customerService.lastOrder();
+
+constructor(private customerService: CustomerService){}
+
+ngOnInit() {
+  this.customerService.getCustomer().subscribe(response => { this.customer = response })
 }
 
-
-
-
-
-  
 }

@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Customer } from './customer';
 import { OrderDetail } from '../order-detail/orderDetail';
+import { MessageService } from '../message.service';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
 
-  constructor() {}
+  private apiBaseUrl = environment.apiBaseUrl;
+  constructor(private messageService: MessageService, private httpClient: HttpClient) {}
 
   customer: Customer = {
     firstName: "Sebastian",
@@ -33,14 +37,16 @@ export class CustomerService {
     }
     ]
   };
-  getCustomer(): Customer{
-    return this.customer;
+  getCustomers(){
+    return this.httpClient.get<Customer[]>(`${this.apiBaseUrl}/client?pageSize=15&pageNumber=1`)
   }
 
-  lastOrder(): OrderDetail {
-    const lastIndex = this.customer.orderDetail.length - 1;
-    const lastOrder = this.customer.orderDetail[lastIndex];
-    return lastOrder;
+  getCustomer(){
+    return this.httpClient.get<Customer>(`${this.apiBaseUrl}/client/13`)
+  }
+
+  postCustomer(customer: Customer){
+    return this.httpClient.post(`${this.apiBaseUrl}`, customer)
   }
 
 }
