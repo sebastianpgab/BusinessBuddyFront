@@ -11,7 +11,8 @@ import { CustomerService } from './customer/customer.service';
 import { ToastrModule } from 'ngx-toastr';
 import { MessageService } from './message.service';
 import { HttpClientModule } from '@angular/common/http';
-import { CustomerAddComponent } from './customer-add/customer-add.component'
+import { CustomerAddComponent } from './customer/customer-add/customer-add.component';
+import { CustomerUpdateComponent } from './customer/customer-update/customer-update.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CustomerAddComponent } from './customer-add/customer-add.component'
     CustomerComponent,
     AddressComponent,
     OrderDetailComponent,
-    CustomerAddComponent
+    CustomerAddComponent,
+    CustomerUpdateComponent
   ],
   imports: [
     BrowserModule,

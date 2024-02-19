@@ -3,11 +3,11 @@ import { OrderDetail } from "../order-detail/orderDetail";
 
 export interface Customer{
  id?: number;
- firstName: string;
- lastName: string;
- taxNumber: number;
- phoneNumber: string;
- email: string;
+ firstName: string | null;
+ lastName: string | null;
+ taxNumber: number | null;
+ phoneNumber: string | null; 
+ email: string | null;
  address?: Address;
  orderDetail?: Array<OrderDetail>;
 }

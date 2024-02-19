@@ -11,14 +11,12 @@ import { CustomerService } from './customer.service';
 })
 
 export class CustomerComponent {
-  customers: Customer[] | undefined;
   customer: Customer | undefined;
 
 
 constructor(private customerService: CustomerService){}
 
 ngOnInit() {
-  this.customerService.getCustomer().subscribe(response => { this.customer = response })
 }
 
 }
