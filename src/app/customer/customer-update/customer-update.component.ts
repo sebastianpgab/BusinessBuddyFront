@@ -2,6 +2,7 @@ import { Component, Injectable, OnInit } from '@angular/core';
 import { Customer } from '../customer';
 import { CustomerService } from '../customer.service';
 import { MessageService } from 'src/app/message.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-customer-update',
@@ -15,18 +16,19 @@ import { MessageService } from 'src/app/message.service';
 export class CustomerUpdateComponent implements OnInit {
  
   customer: Customer = {
-    firstName: null,
-    lastName: null,
+    firstName: '',
+    lastName: '',
     taxNumber: null,
-    phoneNumber: null,
-    email: null
+    phoneNumber: '',
+    email: ''
   }
 
   customerId: number = 13;
 
-  constructor(private customerService: CustomerService, private messageService: MessageService) { }
+  constructor(private customerService: CustomerService, private messageService: MessageService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {this.customerId = parseInt(params['id'])})
   }
 
   updateClient() : void {

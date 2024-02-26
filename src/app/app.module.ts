@@ -13,6 +13,15 @@ import { MessageService } from './message.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerAddComponent } from './customer/customer-add/customer-add.component';
 import { CustomerUpdateComponent } from './customer/customer-update/customer-update.component'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Route, RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: 'customer/add', component: CustomerAddComponent},
+  { path: 'customer/update', component: CustomerUpdateComponent},
+  { path: '', redirectTo: 'customer/add', pathMatch: 'full'} // Redirects to 'customer/add' if the path is empty
+]
+
 
 @NgModule({
   declarations: [
@@ -24,11 +33,13 @@ import { CustomerUpdateComponent } from './customer/customer-update/customer-upd
     CustomerUpdateComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    RouterModule.forRoot(routes)
   ],
   providers: [
     CustomerService,

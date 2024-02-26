@@ -15,11 +15,11 @@ import { MessageService } from 'src/app/message.service';
 export class CustomerAddComponent implements OnInit {
 
   customer: Customer = {
-    firstName: null,
-    lastName: null,
+    firstName: '',
+    lastName: '',
     taxNumber: null,
-    phoneNumber: null,
-    email: null
+    phoneNumber: '',
+    email: ''
   };
   constructor(private customerService: CustomerService, private messageService: MessageService) { }
 
