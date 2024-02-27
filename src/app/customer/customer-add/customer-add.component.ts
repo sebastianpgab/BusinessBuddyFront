@@ -1,5 +1,5 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { Customer } from '../customer';
+import { Customer } from '../model';
 import { CustomerService } from '../customer.service';
 import { MessageService } from 'src/app/message.service';
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Customer } from './customer';
+import { Customer } from './model';
 import { MessageService } from '../message.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -18,6 +18,10 @@ export class CustomerService {
 
   putCustomer(customer: Customer, customerId: number){
     return this.httpClient.put(`${this.apiBaseUrl}/client/${customerId}`, customer)
+  }
+
+  getCustomers(){
+    return this.httpClient.get<Customer[]>(`${this.apiBaseUrl}/client`)
   }
 
 }

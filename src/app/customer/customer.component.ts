@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { Customer } from './customer';
+import { Customer } from './model';
 import { OrderDetail } from '../order-detail/orderDetail';
 import { CustomerService } from './customer.service';
 

@@ -1,0 +1,24 @@
+<div>
+    <div class="panel-body">
+        <table  class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Imie</th>
+                    <th>Nazwisko</th>
+                    <th>Numer podatkowy</th>
+                    <th>Numer telefonu</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let customer of customers" >
+                    <th>{{customer.firstName}}</th>
+                    <th>{{customer.lastName}}</th>
+                    <th>{{customer.taxNumber}}</th>
+                    <th>{{customer.phoneNumber}}</th>
+                    <th>{{customer.email}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>>

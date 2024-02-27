@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { AddressComponent } from './address/address.component';
@@ -15,13 +14,14 @@ import { CustomerAddComponent } from './customer/customer-add/customer-add.compo
 import { CustomerUpdateComponent } from './customer/customer-update/customer-update.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Route, RouterModule, Routes } from '@angular/router';
+import { CustomerModule } from './customer/customer.module';
+import { NotFoundComponent } from '../core/not-found/not-found.component';
+import { CustomerListComponent } from './customer/customer-list/customer-list.component';
 
 const routes: Routes = [
-  { path: 'customer/add', component: CustomerAddComponent},
-  { path: 'customer/update', component: CustomerUpdateComponent},
-  { path: '', redirectTo: 'customer/add', pathMatch: 'full'} // Redirects to 'customer/add' if the path is empty
+  { path: '', redirectTo: 'customer/add', pathMatch: 'full'}, // Redirects to 'customer/add' if the path is empty
+  { path: '**', component: NotFoundComponent} // This component will be shown for any path that does not match previously defined routes.
 ]
-
 
 @NgModule({
   declarations: [
@@ -30,7 +30,9 @@ const routes: Routes = [
     AddressComponent,
     OrderDetailComponent,
     CustomerAddComponent,
-    CustomerUpdateComponent
+    CustomerUpdateComponent,
+    NotFoundComponent,
+    CustomerListComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -38,6 +40,7 @@ const routes: Routes = [
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    CustomerModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(routes)
   ],
