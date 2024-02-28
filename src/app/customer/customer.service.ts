@@ -3,6 +3,7 @@ import { Customer } from './model';
 import { MessageService } from '../message.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { PagedResult } from '../models/page-result-model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,11 @@ export class CustomerService {
   }
 
   getCustomers(){
-    return this.httpClient.get<Customer[]>(`${this.apiBaseUrl}/client`)
+    return this.httpClient.get<PagedResult<Customer>>(`${this.apiBaseUrl}/client?pageSize=15&pageNumber=1`)
+  }
+
+  getCustomer( customerId: number | null){
+    return this.httpClient.get<Customer>(`${this.apiBaseUrl}/client/${customerId}`)
   }
 
 }

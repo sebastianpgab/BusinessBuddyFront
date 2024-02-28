@@ -17,6 +17,7 @@ import { Route, RouterModule, Routes } from '@angular/router';
 import { CustomerModule } from './customer/customer.module';
 import { NotFoundComponent } from '../core/not-found/not-found.component';
 import { CustomerListComponent } from './customer/customer-list/customer-list.component';
+import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'customer/add', pathMatch: 'full'}, // Redirects to 'customer/add' if the path is empty
@@ -32,7 +33,8 @@ const routes: Routes = [
     CustomerAddComponent,
     CustomerUpdateComponent,
     NotFoundComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    CustomerDetailsComponent
   ],
   imports: [
     BrowserAnimationsModule,
