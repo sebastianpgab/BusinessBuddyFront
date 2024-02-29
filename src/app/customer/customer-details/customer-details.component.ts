@@ -18,11 +18,12 @@ export class CustomerDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {this.customerId = parseInt(params['id'])})
+    this.getCustomer();
   }
 
   getCustomer(){
     this.customerService.getCustomer(this.customerId).subscribe(response => {
-      () => this.customer = response;
+      this.customer = response;
       this.messageService.success("Uzytkownik pobrany")   
     },
     error => this.messageService.error("Nie udało się pobrać użytkownika"))

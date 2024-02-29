@@ -1,3 +1,8 @@
-<div>
-    <p>{{customer?.firstName}}</p>
+<div *ngIf="customer">
+   <h1>Dane klienta:</h1>
+  <p>Imię: {{customer.firstName}}</p>
+  <p>Nazwisko: {{customer.lastName}}</p>
+  <p>Numer podatkowy: {{customer.taxNumber}}</p>
+  <p>Telefon: {{customer.phoneNumber}}</p>
+  <p>Email: {{customer.email}}</p>
 </div>
