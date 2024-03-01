@@ -1,4 +1,4 @@
-import { Address } from "../address/address";
+import { Address } from "./address/address";
 import { OrderDetail } from "../order-detail/orderDetail";
 
 export interface Customer{

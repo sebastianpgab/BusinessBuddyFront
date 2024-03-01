@@ -29,4 +29,9 @@ export class CustomerService {
     return this.httpClient.get<Customer>(`${this.apiBaseUrl}/client/${customerId}`)
   }
 
+  //zrobić w api ze po adresie ip klienta wyszuka się odpowiedni adres
+  getAddress( customerId: number | null){
+    return this.httpClient.get<Customer>(`${this.apiBaseUrl}/client/${customerId}`)
+  }
+
 }

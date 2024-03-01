@@ -1,8 +1,33 @@
-<div *ngIf="customer">
-   <h1>Dane klienta:</h1>
-  <p>Imię: {{customer.firstName}}</p>
-  <p>Nazwisko: {{customer.lastName}}</p>
-  <p>Numer podatkowy: {{customer.taxNumber}}</p>
-  <p>Telefon: {{customer.phoneNumber}}</p>
-  <p>Email: {{customer.email}}</p>
+<div class="container mt-5">
+  <div class="row">
+    <!-- Dane klienta -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          Dane klienta:
+        </div>
+        <div class="card-body" *ngIf="customer">
+          <p class="card-text">Imię: {{customer.firstName}}</p>
+          <p class="card-text">Nazwisko: {{customer.lastName}}</p>
+          <p class="card-text">Numer podatkowy: {{customer.taxNumber}}</p>
+          <p class="card-text">Telefon: {{customer.phoneNumber}}</p>
+          <p class="card-text">Email: {{customer.email}}</p>
+        </div>
+      </div>
+    </div>
+    <!-- Adres 
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          Adres:
+        </div>
+        <div class="card-body">
+          <p class="card-text">Ulica: {{address.street}} {{address.buildingNumber}}/{{address.apartmentNumber}}</p>
+          <p class="card-text">Kod pocztowy: {{address.postalCode}}</p>
+          <p class="card-text">Miasto: {{address.city}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+-->
