@@ -15,19 +15,28 @@
         </div>
       </div>
     </div>
-    <!-- Adres 
+    <!-- Adres -->
     <div class="col-md-6">
       <div class="card">
         <div class="card-header">
           Adres:
         </div>
         <div class="card-body">
-          <p class="card-text">Ulica: {{address.street}} {{address.buildingNumber}}/{{address.apartmentNumber}}</p>
-          <p class="card-text">Kod pocztowy: {{address.postalCode}}</p>
-          <p class="card-text">Miasto: {{address.city}}</p>
+          <p>Ulica: {{address?.street}}</p>
+          <ng-container *ngIf="address?.buildingNumber == null &&  address?.apartmentNumber == null then noAddress else hasAddress"></ng-container>
+          <ng-template #hasAddress>
+            <ng-container *ngIf="address?.buildingNumber == null then apartmentNumber else buildingNumber"></ng-container>
+            <ng-template #apartmentNumber>Numer mieszkania: {{address?.apartmentNumber }}</ng-template>
+            <ng-template #buildingNumber>Numer domu: {{address?.buildingNumber}}</ng-template>
+          </ng-template>
+
+          <ng-template  #noAddress>
+            <p>Numer mieszkania: brak</p>
+          </ng-template>
+          <p>Postal code: {{address?.postalCode}}</p>
+          <p>Postal code: {{address?.city}}</p>
         </div>
       </div>
     </div>
   </div>
 </div>
--->

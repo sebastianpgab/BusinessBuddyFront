@@ -4,6 +4,7 @@ import { MessageService } from '../message.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { PagedResult } from '../models/page-result-model';
+import { Address } from './address/address';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,7 @@ export class CustomerService {
 
   //zrobić w api ze po adresie ip klienta wyszuka się odpowiedni adres
   getAddress( customerId: number | null){
-    return this.httpClient.get<Customer>(`${this.apiBaseUrl}/client/${customerId}`)
+    return this.httpClient.get<Address>(`${this.apiBaseUrl}/address/${customerId}`)
   }
 
 }
