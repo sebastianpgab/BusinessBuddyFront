@@ -18,6 +18,8 @@ import { CustomerModule } from './customer/customer.module';
 import { NotFoundComponent } from '../core/not-found/not-found.component';
 import { CustomerListComponent } from './customer/customer-list/customer-list.component';
 import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavbarComponent } from '../core/navbar/navbar.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'customer/add', pathMatch: 'full'}, // Redirects to 'customer/add' if the path is empty
@@ -34,7 +36,9 @@ const routes: Routes = [
     CustomerUpdateComponent,
     NotFoundComponent,
     CustomerListComponent,
-    CustomerDetailsComponent
+    CustomerDetailsComponent,
+    DashboardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserAnimationsModule,

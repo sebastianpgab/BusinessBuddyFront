@@ -8,3 +8,31 @@
     padding: 2%;
     border: 2px solid;
 }
+//global
+
+h3 {
+  font-size: 20px;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  font-family: serif;
+}
+
+//navbar
+.navbar-custom {
+    background-color: #b2cee9 !important; /* Jasne tło */
+    box-shadow: 0 2px 4px rgba(30, 56, 65, 0.4); /* Delikatny cień */
+    border-radius: 10px;
+    margin-bottom: 25px;
+  }
+
+  .navbar-custom .navbar-nav .nav-link {
+    color: #504747 !important; /* Ciemniejszy kolor tekstu dla lepszej czytelności */
+  }
+
+  .navbar-custom .navbar-nav .nav-link:hover {
+    color: #5f99d7 !important; // Kolor tekstu po najechaniu
+  }
+
+  .navbar-custom .navbar-toggler {
+    background-color: #007bff !important; // Kolor tła przełącznika na urządzeniach mobilnych 
+  }
