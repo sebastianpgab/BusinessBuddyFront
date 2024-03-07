@@ -36,3 +36,42 @@ h3 {
   .navbar-custom .navbar-toggler {
     background-color: #007bff !important; // Kolor tła przełącznika na urządzeniach mobilnych 
   }
+
+  //dashboard
+
+  /* dashboard.component.css */
+.dashboard {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  margin: 20px;
+}
+
+.header h1 {
+  color: #0d6efd;
+  text-align: center;
+}
+
+.panels {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.panel {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  padding: 20px;
+  width: 30%;
+}
+
+.panel h2 {
+  color: #495057;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.8em;
+  color: #6c757d;
+}
