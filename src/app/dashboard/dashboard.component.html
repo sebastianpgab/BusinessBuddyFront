@@ -4,13 +4,16 @@
     </div>
     <div class="panels">
       <div class="panel">
-        <h2>Statystyki</h2>
+        <h2 style="text-align: center;">Statystyki</h2>
       </div>
       <div class="panel">
-        <h2>Ostatnie Akcje</h2>
+        <h2 style="text-align: center;">Ostatnie Akcje</h2>
+        <ul>
+          <p *ngFor="let action of actions" (click)="navigateToAction(action)" class="clickable-item">{{action}}</p>
+        </ul>
       </div>
       <div class="panel">
-        <h2>Zadania</h2>
+        <h2 style="text-align: center;">Zadania</h2>
       </div>
     </div>
     <div class="footer">

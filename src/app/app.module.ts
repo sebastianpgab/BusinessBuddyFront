@@ -21,8 +21,7 @@ import { CustomerDetailsComponent } from './customer/customer-details/customer-d
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from '../core/navbar/navbar.component';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { LastActionsComponent } from './last-actions/last-actions.component';
-import { ActionsModule } from './last-actions/actions.module';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'customer/add', pathMatch: 'full'}, // Redirects to 'customer/add' if the path is empty
@@ -41,9 +40,8 @@ const routes: Routes = [
     CustomerListComponent,
     CustomerDetailsComponent,
     DashboardComponent,
-    NavbarComponent,
-    LastActionsComponent
-  ],
+    NavbarComponent
+    ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -52,7 +50,6 @@ const routes: Routes = [
     HttpClientModule,
     CustomerModule,
     DashboardModule,
-    ActionsModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(routes)
   ],

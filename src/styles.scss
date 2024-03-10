@@ -8,6 +8,7 @@
     padding: 2%;
     border: 2px solid;
 }
+
 //global
 
 h3 {
@@ -74,4 +75,15 @@ h3 {
   margin-top: 20px;
   font-size: 0.8em;
   color: #6c757d;
+}
+
+//others
+.clickable-item {
+  color: rgb(12, 12, 75); /* lub inny kolor, który preferujesz */
+  cursor: pointer;
+  font-style: normal;
+  font-size: 20px;
+  text-align: center;
+  margin: 5px;
+  border: 2px solid rgb(88, 70, 70); 
 }

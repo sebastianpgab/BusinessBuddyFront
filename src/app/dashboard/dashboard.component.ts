@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DashboardService } from './dashboard.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,10 +9,24 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class DashboardComponent implements OnInit {
+  actions: string[] = [];
 
-  constructor() { }
+  constructor(private dashboardService: DashboardService, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.actions = this.dashboardService.getActions();
+  }
+
+  navigateToAction(action: string): void {
+    let path;
+    switch (action) {
+      case 'Dodanie klienta':
+        path = '/customer/add';
+        break;
+      default:
+        path = '/';
+    }
+    this.router.navigate([path]);
   }
 
 }
