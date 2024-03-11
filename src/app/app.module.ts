@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AddressComponent } from './customer/address/address.component';
 import { CustomerComponent } from './customer/customer.component';
 import { AppComponent } from './app.component';
-import { OrderDetailComponent } from './order-detail/order-detail.component';
+import { OrderDetailComponent } from './order/order-detail/order-detail/order-detail.component';
 import { CustomerService } from './customer/customer.service';
 import { ToastrModule } from 'ngx-toastr';
 import { MessageService } from './message.service';
@@ -21,6 +21,7 @@ import { CustomerDetailsComponent } from './customer/customer-details/customer-d
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from '../core/navbar/navbar.component';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { OrderComponent } from './order/order-detail/order/order.component';
 
 
 const routes: Routes = [
@@ -39,8 +40,8 @@ const routes: Routes = [
     NotFoundComponent,
     CustomerListComponent,
     CustomerDetailsComponent,
-    DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    OrderComponent
     ],
   imports: [
     BrowserAnimationsModule,

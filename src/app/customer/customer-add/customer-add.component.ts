@@ -30,9 +30,10 @@ export class CustomerAddComponent implements OnInit {
   }
 
   addCustomer() : void {
-    this.dashboardService.addAction('Dodanie klienta');
     this.customerService.postCustomer(this.customer).subscribe(
-      () => this.messageService.success("Poprawnie dodano klienta"),
+      () => {this.messageService.success("Poprawnie dodano klienta")
+      var date = new Date();
+      this.dashboardService.addAction(`Dodanie klienta: ${this.customer.firstName} (${date.toLocaleDateString()})`)},
     error => this.messageService.error("Nie udało się dodać klienta"));
     }
 

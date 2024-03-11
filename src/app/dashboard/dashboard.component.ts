@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from './dashboard.service';
 import { Router } from '@angular/router';
+import { CustomerListComponent } from '../customer/customer-list/customer-list.component';
 
 @Component({
   selector: 'app-dashboard',

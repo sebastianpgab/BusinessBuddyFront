@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class DashboardService {
 
   private actionsKey = 'actions';
-  private actions: string[] = [];
+  private actions: string[] = [].reverse();
 
   constructor() {
     this.loadActions();

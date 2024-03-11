@@ -9,36 +9,6 @@
        <p>Numer telefonu: {{customer?.phoneNumber}}</p>
        <p>Email: {{customer?.email}}</p>
     </div>
-<!--
-    <div class="div">
-        <h3>Adres klienta:</h3>
-        <p>Ulica: {{customer.address.street}}</p>
-        
-        <ng-container *ngIf="customer.address.buildingNumber == null &&  customer.address.apartmentNumber == null then noAddress else address"></ng-container>  
-        <ng-template #address>
-            <ng-container *ngIf="customer.address.buildingNumber == null then apartmentNumber else buildingNumber"></ng-container>
-            <ng-template #apartmentNumber>Numer mieszkania: {{customer.address.apartmentNumber }}</ng-template>
-            <ng-template #buildingNumber>Numer domu: {{customer.address.buildingNumber}}</ng-template>
-        </ng-template>
-
-        <ng-template  #noAddress>
-            <p>Numer mieszkania: brak</p>
-        </ng-template>
-
-        <p>Postal code: {{customer.address.postalCode}}</p>
-        <p>Postal code: {{customer.address.city}}</p>
-    </div>
-
-    <div class="div">
-        <h3>Ostatnie zamówienie</h3>
-        <p>Data zamówienia: {{lastOrder.orderDate | date}}</p>
-        <p>Data zakończenia: {{lastOrder.completionDate | date}}</p>
-        <p>Status zamówienia: {{lastOrder.orderStatus}}</p>
-        <p>Notatki: {{lastOrder.notes}}</p>
-        <p>Metoda płatności: {{lastOrder.paymentMethod}}</p>
-        <p>Płatność końcowa: {{lastOrder.finalAmount}}</p>       
-    </div>-->
-
 </div>
 
 

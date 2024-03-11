@@ -22,10 +22,8 @@ export class CustomerListComponent implements OnInit {
 
   getCustomers(): void {
     this.customerService.getCustomers().subscribe( response => {
-      this.messageService.success("Poprawnie załadowana listę klientów");
       this.customers = response.items;
-    },
-    error => this.messageService.error("Nie udało się załadować listy klientów"));
+    })
   }
 
 }
