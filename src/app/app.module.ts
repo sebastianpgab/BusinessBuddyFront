@@ -22,6 +22,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from '../core/navbar/navbar.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { OrderComponent } from './order/order-detail/order/order.component';
+import { OrderModule } from './order/order.module';
 
 
 const routes: Routes = [
@@ -41,7 +42,8 @@ const routes: Routes = [
     CustomerListComponent,
     CustomerDetailsComponent,
     NavbarComponent,
-    OrderComponent
+    OrderComponent,
+    OrderDetailComponent
     ],
   imports: [
     BrowserAnimationsModule,
@@ -51,6 +53,7 @@ const routes: Routes = [
     HttpClientModule,
     CustomerModule,
     DashboardModule,
+    OrderModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(routes)
   ],

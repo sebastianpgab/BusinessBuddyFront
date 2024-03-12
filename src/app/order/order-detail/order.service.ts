@@ -12,8 +12,9 @@ export class OrderService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getOrder(orderId: number){
-    this.httpClient.get<OrderDetail>(`${this.apiBaseUrl}/order/${orderId}/orderDetail`)
+  getOrder(orderId: number | null, id: number | null){
+    return this.httpClient.get<OrderDetail>(`${this.apiBaseUrl}/order/${orderId}/orderDetail/${id}`)
+
   }
 
 }
