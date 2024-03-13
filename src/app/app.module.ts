@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { AddressComponent } from './customer/address/address.component';
 import { CustomerComponent } from './customer/customer.component';
 import { AppComponent } from './app.component';
-import { OrderDetailComponent } from './order/order-detail/order-detail/order-detail.component';
 import { CustomerService } from './customer/customer.service';
 import { ToastrModule } from 'ngx-toastr';
 import { MessageService } from './message.service';
@@ -18,11 +17,12 @@ import { CustomerModule } from './customer/customer.module';
 import { NotFoundComponent } from '../core/not-found/not-found.component';
 import { CustomerListComponent } from './customer/customer-list/customer-list.component';
 import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from '../core/navbar/navbar.component';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { OrderComponent } from './order/order-detail/order/order.component';
+import { OrderComponent } from './order/order/order.component';
 import { OrderModule } from './order/order.module';
+import { OrderDetailComponent } from './order/order-detail/order-detail.component';
+import { OrderAddComponent } from './order/order-detail/order-detail-add/order-add.component';
 
 
 const routes: Routes = [
@@ -43,7 +43,8 @@ const routes: Routes = [
     CustomerDetailsComponent,
     NavbarComponent,
     OrderComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    OrderAddComponent
     ],
   imports: [
     BrowserAnimationsModule,

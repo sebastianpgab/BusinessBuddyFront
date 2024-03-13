@@ -29,9 +29,7 @@ export class OrderDetailComponent implements OnInit {
   getOrderDetail(){
     this.orderService.getOrder(this.orderId, this.id).subscribe(response => {
       this.orderDetail = response;
-      this.messageService.success("")   
-      },
-      error => this.messageService.error(""))
+      })
   }
 
 

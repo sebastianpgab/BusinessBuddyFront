@@ -18,6 +18,7 @@
                     <th>{{customer.phoneNumber}}</th>
                     <th>{{customer.email}}</th>
                     <th> <a [routerLink]="['/customer', customer.id]">Szczegóły</a></th>
+                    <th> <a [routerLink]="['/customer', customer.id,'order']">Utwórz zamówienie</a></th>
                 </tr>
             </tbody>
         </table>
