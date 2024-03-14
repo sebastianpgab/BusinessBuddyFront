@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Observable, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
+import { Product } from 'src/app/product/model';
+import { ProductService } from 'src/app/product/product.service';
 
 @Component({
   selector: 'app-order',
@@ -8,9 +12,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderComponent implements OnInit {
 
-  constructor() { }
+  searchControl = new FormControl();
+  products$: Observable<Product[]>;
+  selectedProducts: Product[] = [];
 
-  ngOnInit(): void {
+  constructor(private productService: ProductService) { }
+
+ 
+  ngOnInit() {
+    this.products$ = this.searchControl.valueChanges.pipe(
+      debounceTime(300), 
+      distinctUntilChanged(), 
+      switchMap(query => this.productService.searchProducts(query))
+    );
   }
+
+  addProductToOrder(product: Product) {
+    this.selectedProducts.push(product);
+    this.searchControl.setValue('');
+  }
+
 
 }

@@ -23,6 +23,8 @@ import { OrderComponent } from './order/order/order.component';
 import { OrderModule } from './order/order.module';
 import { OrderDetailComponent } from './order/order-detail/order-detail.component';
 import { OrderAddComponent } from './order/order-detail/order-detail-add/order-add.component';
+import { OrderProductsComponent } from './order-products/order-products.component';
+import { ProductComponent } from './product/product.component';
 
 
 const routes: Routes = [
@@ -35,16 +37,15 @@ const routes: Routes = [
     AppComponent,
     CustomerComponent,
     AddressComponent,
-    OrderDetailComponent,
     CustomerAddComponent,
     CustomerUpdateComponent,
     NotFoundComponent,
     CustomerListComponent,
     CustomerDetailsComponent,
     NavbarComponent,
-    OrderComponent,
-    OrderDetailComponent,
-    OrderAddComponent
+    OrderAddComponent,
+    OrderProductsComponent,
+    ProductComponent
     ],
   imports: [
     BrowserAnimationsModule,

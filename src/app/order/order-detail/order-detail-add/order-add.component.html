@@ -1,7 +1,21 @@
 <section class="background">
     <header class="panel-heading">
-        <h3>Dodaj zamówienie</h3>
+        <h3>Wybierz towar z zamowienia</h3>
     </header>
+    <div class="panel-body">
+        <form novalidate>
+            <div class="form-group">
+                <label for="firstName">Metoda płatności</label>
+                <input type="text" class="form-control" id="firstName" [(ngModel)]="orderDetail" name="firstName">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Dodatkowe informacje</label>
+                <input type="text" class="form-control" id="lastName" [(ngModel)]="orderDetail" name="lastName">
+            </div>
+            <button type="button" class="button" (click)="addOrderDetail()"><i class="fa-solid fa-plus"></i> Dodaj</button>
+        </form>
+    </div>
+
     <div class="panel-body">
         <form novalidate>
             <div class="form-group">
