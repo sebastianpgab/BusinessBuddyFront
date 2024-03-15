@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { OrderComponent } from './order/order.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'order/:orderId/orderDetail/:id', component: OrderDetailComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   declarations: [OrderDetailComponent, OrderComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   exports: [OrderDetailComponent, OrderComponent]

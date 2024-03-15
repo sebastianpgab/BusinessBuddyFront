@@ -13,17 +13,22 @@ import { ProductService } from 'src/app/product/product.service';
 export class OrderComponent implements OnInit {
 
   searchControl = new FormControl();
-  products$: Observable<Product[]>;
+  products$: Product[] | null = null;
   selectedProducts: Product[] = [];
 
   constructor(private productService: ProductService) { }
 
  
   ngOnInit() {
-    this.products$ = this.searchControl.valueChanges.pipe(
-      debounceTime(300), 
-      distinctUntilChanged(), 
-      switchMap(query => this.productService.searchProducts(query))
+    this.getProducts();
+  }
+
+  getProducts() {
+    this.productService.getProducts().subscribe(
+      (response) => {
+        this.products$ = response;
+      },
+      (error) => console.log(error)
     );
   }
 

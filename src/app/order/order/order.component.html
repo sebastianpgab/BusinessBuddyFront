@@ -1,13 +1,12 @@
-<input type="text" [formControl]="searchControl" placeholder="Wyszukaj produkt...">
 <ul>
-  <li *ngFor="let product of products$ | async" (click)="addProductToOrder(product)">
-    {{ product.name }}
+  <li *ngFor="let product of products$" (click)="addProductToOrder(product)">
+    {{ product.productType }}
   </li>
 </ul>
 
 <h3>Wybrane produkty:</h3>
 <ul>
   <li *ngFor="let selectedProduct of selectedProducts">
-    {{ selectedProduct.name }}
+    {{ selectedProduct.productType }}
   </li>
 </ul>
