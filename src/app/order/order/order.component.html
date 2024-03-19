@@ -1,12 +1,45 @@
-<ul>
-  <li *ngFor="let product of products$" (click)="addProductToOrder(product)">
-    {{ product.productType }}
-  </li>
-</ul>
+<h3>Produkty</h3>
+<div>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th> Id </th>
+        <th> Nazwa produktu </th>
+        <th> Cena </th>
+        <th> Stan magazynowy</th>
+        <th> Kolor </th>
+        <th> Dodaj do koszyka </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products$" >
+        <th> {{product.id}}</th>
+        <th> {{product.productType}} </th>
+        <th> {{product.price}} </th>
+        <th> {{product.stockQuantity}} </th>
+        <th> {{product.color}} </th>
+        <th (click)="addProductToOrder(product)"><p class="clickable-item">Dodaj</p></th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
 
 <h3>Wybrane produkty:</h3>
-<ul>
-  <li *ngFor="let selectedProduct of selectedProducts">
-    {{ selectedProduct.productType }}
-  </li>
-</ul>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Typ produktu</th>
+        <th>Usuń produkt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let selectedProduct of selectedProducts">
+        <th>{{selectedProduct.id}}</th>
+        <th>{{selectedProduct.productType}}</th>
+        <th (click)="deleteProductToOrder(selectedProduct.id)"><p class="clickable-item">Usuń</p></th>
+      </tr>
+    </tbody>
+  </table>

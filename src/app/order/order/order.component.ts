@@ -13,8 +13,8 @@ import { ProductService } from 'src/app/product/product.service';
 export class OrderComponent implements OnInit {
 
   searchControl = new FormControl();
-  products$: Product[] | null = null;
-  selectedProducts: Product[] = [];
+  products$: Array<Product> = [];
+  selectedProducts: Array<Product> = [];
 
   constructor(private productService: ProductService) { }
 
@@ -35,6 +35,10 @@ export class OrderComponent implements OnInit {
   addProductToOrder(product: Product) {
     this.selectedProducts.push(product);
     this.searchControl.setValue('');
+  }
+
+  deleteProductToOrder(productId: number){
+    this.selectedProducts = this.selectedProducts.filter( product => product.id !== productId);
   }
 
 

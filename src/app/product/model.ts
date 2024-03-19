@@ -4,7 +4,7 @@ import { Mug } from "./products-type/model-mug";
 import { Data } from "@angular/router";
 
 export interface Product {
-    int: number;
+    id: number;
     productType: string;
     price: number;
     color: string;
