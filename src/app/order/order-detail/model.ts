@@ -1,3 +1,4 @@
+import { OrderProduct } from "src/app/order/order-products/model";
 import { Address } from "../../customer/address/address";
 
 export interface OrderDetail {
@@ -12,6 +13,6 @@ deliveryId?: number;
 deliveryAddress?: Address;
 orderId?: number;
 //order?: Order;
-//orderProducts?: Array<OrderProduct>;
+orderProducts?: Array<OrderProduct>;
 idCompany?: number;
 }

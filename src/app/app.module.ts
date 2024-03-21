@@ -23,7 +23,7 @@ import { OrderComponent } from './order/order/order.component';
 import { OrderModule } from './order/order.module';
 import { OrderDetailComponent } from './order/order-detail/order-detail.component';
 import { OrderAddComponent } from './order/order-detail/order-detail-add/order-add.component';
-import { OrderProductsComponent } from './order-products/order-products.component';
+import { OrderProductsComponent } from './order/order-products/order-products.component';
 import { ProductComponent } from './product/product.component';
 
 
