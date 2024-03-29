@@ -25,6 +25,9 @@ import { OrderDetailComponent } from './order/order-detail/order-detail.componen
 import { OrderAddComponent } from './order/order-detail/order-detail-add/order-add.component';
 import { OrderProductsComponent } from './order/order-products/order-products.component';
 import { ProductComponent } from './product/product.component';
+import { ChooseProductsComponent } from './purchase/choose-products/choose-products.component';
+import { PurchaseModule } from './purchase/purchase.module';
+import { OrderConfigurationComponent } from './purchase/order-configuration/order-configuration.component';
 
 
 const routes: Routes = [
@@ -45,7 +48,7 @@ const routes: Routes = [
     NavbarComponent,
     OrderAddComponent,
     OrderProductsComponent,
-    ProductComponent
+    ProductComponent,
     ],
   imports: [
     BrowserAnimationsModule,
@@ -56,6 +59,7 @@ const routes: Routes = [
     CustomerModule,
     DashboardModule,
     OrderModule,
+    PurchaseModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(routes)
   ],

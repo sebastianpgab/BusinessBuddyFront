@@ -12,7 +12,4 @@ finalAmount?: number;
 deliveryId?: number;
 deliveryAddress?: Address;
 orderId?: number;
-//order?: Order;
-orderProducts?: Array<OrderProduct>;
-idCompany?: number;
 }

@@ -6,6 +6,5 @@ export interface Address {
     postalCode: string;
     city: string;
     clientId: number;
-    companyId?: number
     orderDetailId?: number;
 }

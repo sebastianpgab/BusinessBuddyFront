@@ -8,7 +8,5 @@ export interface Customer{
  taxNumber: number | null;
  phoneNumber: string; 
  email: string;
- address?: Address;
- orderDetail?: Array<OrderDetail>;
 }
 
