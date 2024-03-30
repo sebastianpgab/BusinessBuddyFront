@@ -3,6 +3,7 @@ import { ProductService } from '../../product/product.service';
 import { Product } from '../../product/model';
 import { MessageService } from '../../message.service';
 import { OrderConfigurationComponent } from '../order-configuration/order-configuration.component';
+import { PurchaseService } from '../purchase.service';
 
 @Component({
   selector: 'app-purchase',
@@ -14,10 +15,12 @@ export class ChooseProductsComponent implements OnInit {
 
   products: Array<Product> = [];
 
-  constructor(private productService: ProductService,  private orderConfigurationComponent: OrderConfigurationComponent) { }
+  constructor(private productService: ProductService,  public purchaseService: PurchaseService) { }
 
   ngOnInit(): void {
     this.getProducts();
+    console.log('Aktualna lista wybranych produktów:', this.purchaseService.selectedProducts);
+
   }
 
   getProducts() {
@@ -28,12 +31,4 @@ export class ChooseProductsComponent implements OnInit {
       (error) => console.log(error)
     );
   }
-
-  addProductToOrder(product: Product) {
-    this.orderConfigurationComponent.products.push(product);
-    this.searchControl.setValue('');
-  }
-
-    
-
 }

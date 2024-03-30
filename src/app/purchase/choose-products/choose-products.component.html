@@ -19,8 +19,9 @@
         <th> {{product.price}} </th>
         <th> {{product.stockQuantity}} </th>
         <th> {{product.color}} </th>
-        <th (click)="addProductToOrder(product)"><p class="clickable-item">Dodaj</p></th>      
+        <th (click)="purchaseService.addProductToOrder(product)"><p class="clickable-item">Dodaj</p></th>      
       </tr>
     </tbody>
   </table>
+  <button routerLink="/purchase/order-config">Przejdź dalej</button>
 </div>

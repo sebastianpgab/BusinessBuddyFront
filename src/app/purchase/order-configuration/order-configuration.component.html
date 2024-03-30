@@ -1,1 +1,21 @@
-<p>order-configuration works!</p>
+<h3>Wybrane produkty:</h3>
+<div >
+  <table class="table-container table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Typ produktu</th>
+        <th>Wpisz ilość</th>
+        <th>Usuń produkt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let selectedProduct of purchaseService.orderProducts">
+        <th>{{selectedProduct.id}}</th>
+        <th>{{selectedProduct.product.productType}}</th>
+        <th>{{selectedProduct.quantity}}</th>
+        <th (click)="purchaseService.deleteProductFromOrder(selectedProduct.product.id)"><p class="clickable-item">Usuń</p></th>
+      </tr>
+    </tbody>
+  </table>
+</div>

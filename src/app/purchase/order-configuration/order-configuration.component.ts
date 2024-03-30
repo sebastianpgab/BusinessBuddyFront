@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Product } from 'src/app/product/model';
+import { PurchaseService } from '../purchase.service';
 
 @Component({
   selector: 'app-order-configuration',
@@ -8,11 +10,12 @@ import { Product } from 'src/app/product/model';
   ]
 })
 export class OrderConfigurationComponent implements OnInit {
-
-  products: Array<Product> = [];
-  constructor() { }
+  
+ 
+  constructor(public purchaseService: PurchaseService) { }
 
   ngOnInit(): void {
+
   }
 
 }
