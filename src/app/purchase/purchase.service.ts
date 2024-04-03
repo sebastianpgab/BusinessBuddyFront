@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Product } from '../product/model';
 import { MessageService } from '../message.service';
 import { OrderProduct } from '../order/order-products/model';
+import { Customer } from '../customer/model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class PurchaseService {
   searchControl = new FormControl();
   selectedProducts: Array<Product> = [];
   orderProducts: Array<OrderProduct> = [];
+  customer: Customer | null = null;
 
 
   constructor(private messageService: MessageService) { }
@@ -32,4 +34,12 @@ export class PurchaseService {
   deleteProductFromOrder(productId: number) {
     this.orderProducts = this.orderProducts.filter(orderProduct => orderProduct.productId !== productId);
   }
+
+  addCustomerToOrder(customer: Customer){
+    
+
+
+  }
+
+
 }

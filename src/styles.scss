@@ -94,3 +94,45 @@ h3 {
 .table-container{
   width: 50% !important;
 }
+
+//purchase
+.purchase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  justify-content: center; 
+}
+
+.purchase > div {
+  flex: 1 1 24%; /* Dzieci zajmą co najmniej 30% szerokości kontenera, ale mogą się rozszerzać */
+  min-width: 300px; /* Zapewnia, że dzieci nie będą mniejsze niż 300px */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Opcjonalnie, dodaje delikatny cień dla lepszego wyróżnienia */
+  padding: 10px; /* Dodaje wewnętrzną przestrzeń dookoła zawartości każdego diva */
+  border-radius: 8px; /* Zaokrąglenie rogów dla estetyki */
+  background-color: #fff; /* Ustawia białe tło dla każdego diva */
+}
+
+.table-container {
+  overflow-x: auto; /* Zapewnia przewijanie dla tabel, jeśli są zbyt szerokie */
+}
+
+.form-group {
+  margin-bottom: 15px; /* Dodaje odstęp na dole każdej grupy formularza */
+}
+
+.form-control {
+  width: 100%; /* Zapewnia, że elementy formularza zajmują pełną szerokość swojego kontenera */
+  padding: 8px; /* Dodaje wewnętrzną przestrzeń */
+  border: 1px solid #ccc; /* Dodaje obramówkę */
+  border-radius: 4px; /* Zaokrągla rogi */
+}
+
+.additional-info {
+  flex: 1; /* Umożliwia elementowi wypełnianie dostępnej przestrzeni, ale z ograniczeniami poniżej */
+  max-width: 32%; /* Ogranicza maksymalną szerokość do 600px */
+  margin-right: auto; /* Odstęp tylko po prawej stronie, co spowoduje, że element przylegnie do lewej krawędzi */
+}
+.choosen-prodcuts {
+  max-width: 52; /* Ogranicza maksymalną szerokość do 600px */
+  margin-right: auto; /* Odstęp tylko po prawej stronie, co spowoduje, że element przylegnie do lewej krawędzi */
+}
