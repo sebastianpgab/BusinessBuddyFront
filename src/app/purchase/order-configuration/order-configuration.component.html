@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let selectedProduct of purchaseService.orderProducts">
+      <tr *ngFor="let selectedProduct of purchaseService.purchase?.orderProducts">
         <th>{{selectedProduct.id}}</th>
         <th>{{selectedProduct.product.productType}}</th>
         <th><input [(ngModel)]="selectedProduct.quantity"></th>

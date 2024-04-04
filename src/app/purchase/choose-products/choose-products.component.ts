@@ -19,8 +19,6 @@ export class ChooseProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProducts();
-    console.log('Aktualna lista wybranych produktów:', this.purchaseService.selectedProducts);
-
   }
 
   getProducts() {
