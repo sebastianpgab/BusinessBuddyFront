@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ChooseProductsComponent } from './choose-products/choose-products.component';
 import { OrderConfigurationComponent } from './order-configuration/order-configuration.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'purchase/choose-products', component: ChooseProductsComponent},
@@ -14,6 +14,7 @@ const routes: Routes = [
   declarations: [ChooseProductsComponent, OrderConfigurationComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     FormsModule,
     RouterModule.forChild(routes)
   ]

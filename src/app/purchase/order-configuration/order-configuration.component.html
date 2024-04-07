@@ -4,7 +4,6 @@
   <table class="table-container table table-striped table-bordered">
     <thead>
       <tr>
-        <th>Id</th>
         <th>Typ produktu</th>
         <th>Ilość</th>
         <th>Usuń produkt</th>
@@ -12,7 +11,6 @@
     </thead>
     <tbody>
       <tr *ngFor="let selectedProduct of purchaseService.purchase?.orderProducts">
-        <th>{{selectedProduct.id}}</th>
         <th>{{selectedProduct.product.productType}}</th>
         <th><input [(ngModel)]="selectedProduct.quantity"></th>
         <th (click)="purchaseService.deleteProductFromOrder(selectedProduct.product.id)"><p class="clickable-item">Usuń</p></th>
@@ -21,80 +19,79 @@
   </table>
 </div>
 
-<div>
-  <h3>Wypełnij dane klienta:</h3>
-  <form>
-    <div class="form-group">
-      <label for="firstName">First Name:</label>
-      <input type="text" id="firstName" class="form-control" name="firstName" ngModel required>
-    </div>
-    <div class="form-group">
-      <label for="lastName">Last Name:</label>
-      <input type="text" id="lastName" class="form-control" name="lastName" ngModel required>
-    </div>
-    <div class="form-group">
-      <label for="taxNumber">Tax Number:</label>
-      <input type="number" id="taxNumber" class="form-control" name="taxNumber" ngModel>
-    </div>
-    <div class="form-group">
-      <label for="phoneNumber">Phone Number:</label>
-      <input type="text" id="phoneNumber" class="form-control" name="phoneNumber" ngModel required>
-    </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" id="email" class="form-control" name="email" ngModel required>
-    </div>
-  </form>
-</div>
-
-<div>
-  <h3>Wypełnij adres klienta:</h3>
-  <form>
-    <div class="form-group">
-      <label for="street">Ulica:</label>
-      <input type="text" id="street" class="form-control" name="street" ngModel required>
-    </div>
-    
-    <div class="form-group">
-      <label for="buildingNumber">Numer budynku:</label>
-      <input type="text" id="buildingNumber" class="form-control" name="buildingNumber" ngModel>
-    </div>
-    
-    <div class="form-group">
-      <label for="apartmentNumber">Numer mieszkania:</label>
-      <input type="text" id="apartmentNumber" class="form-control" name="apartmentNumber" ngModel>
-    </div>
-    
-    <div class="form-group">
-      <label for="postalCode">Kod pocztowy:</label>
-      <input type="text" id="postalCode" class="form-control" name="postalCode" ngModel required pattern="\d{2}-\d{3}">
-    </div>
-    
-    <div class="form-group">
-      <label for="city">Miasto:</label>
-      <input type="text" id="city" class="form-control" name="city" ngModel required>
-    </div>
-  </form>
-</div>
-
-<div class="additional-info">
-  <h3>Dodatkowe informacje:</h3>
-  <form>
-    <div class="form-group">
-      <label for="notes">Notatki:</label>
-      <textarea id="notes" class="form-control" name="notes" ngModel></textarea>
-    </div>
-    
-    <div class="form-group">
-      <label for="paymentMethod">Metoda płatności:</label>
-      <select id="paymentMethod" class="form-control" name="paymentMethod" ngModel>
-        <option value="">Wybierz metodę płatności</option>
-        <option value="cash">Gotówka</option>
-        <option value="card">Karta</option>
-        <option value="bankTransfer">Przelew bankowy</option>
-      </select>
-    </div>
+  <!-- Formularz danych klienta -->
+  <div>
+    <h3>Wypełnij dane klienta:</h3>
+    <form>
+      <div class="form-group">
+        <label for="firstName">Imię:</label>
+        <input type="text" id="firstName" class="form-control" name="firstName" [(ngModel)]="firstName">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Nazwisko:</label>
+        <input type="text" id="lastName" class="form-control" name="lastName" [(ngModel)]="lastName">
+      </div>
+      <div class="form-group">
+        <label for="taxNumber">NIP:</label>
+        <input type="text" id="taxNumber" class="form-control" name="taxNumber" [(ngModel)]="taxNumber">
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Numer telefonu:</label>
+        <input type="text" id="phoneNumber" class="form-control" name="phoneNumber" [(ngModel)]="phoneNumber">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" class="form-control" name="email" [(ngModel)]="email">
+      </div>
     </form>
+  </div>
+
+  <!-- Formularz adresu klienta -->
+  <div>
+    <h3>Wypełnij adres klienta:</h3>
+    <form>
+      <div class="form-group">
+        <label for="street">Ulica:</label>
+        <input type="text" id="street" class="form-control" name="street" [(ngModel)]="street">
+      </div>
+      <div class="form-group">
+        <label for="buildingNumber">Numer budynku:</label>
+        <input type="text" id="buildingNumber" class="form-control" name="buildingNumber" [(ngModel)]="buildingNumber">
+      </div>
+      <div class="form-group">
+        <label for="apartmentNumber">Numer mieszkania:</label>
+        <input type="text" id="apartmentNumber" class="form-control" name="apartmentNumber" [(ngModel)]="apartmentNumber">
+      </div>
+      <div class="form-group">
+        <label for="postalCode">Kod pocztowy:</label>
+        <input type="text" id="postalCode" class="form-control" name="postalCode" [(ngModel)]="postalCode" pattern="\d{2}-\d{3}">
+      </div>
+      <div class="form-group">
+        <label for="city">Miasto:</label>
+        <input type="text" id="city" class="form-control" name="city" [(ngModel)]="city">
+      </div>
+    </form>
+  </div>
+
+  <!-- Dodatkowe informacje -->
+  <div class="additional-info">
+    <h3>Dodatkowe informacje:</h3>
+    <form>
+      <div class="form-group">
+        <label for="notes">Notatki:</label>
+        <textarea id="notes" class="form-control" name="notes" [(ngModel)]="notes"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="paymentMethod">Metoda płatności:</label>
+        <select id="paymentMethod" class="form-control" name="paymentMethod" [(ngModel)]="paymentMethod">
+          <option value="">Wybierz metodę płatności</option>
+          <option value="cash">Gotówka</option>
+          <option value="card">Karta</option>
+          <option value="bankTransfer">Przelew bankowy</option>
+        </select>
+      </div>
+    </form>
+  </div>
 </div>
 
-</div>
+<button (click)="createPurchaser()">Złóż zamówienie</button>

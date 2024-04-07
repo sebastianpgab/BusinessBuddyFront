@@ -101,8 +101,8 @@ export class PurchaseService {
   }
   
 
-  postPurchase(purchase: Purchase){
-    return this.httpClient.post(`${this.apiBaseUrl}/client`, purchase);
+  postPurchase(purchase: Purchase | null){
+    return this.httpClient.post(`${this.apiBaseUrl}/purchase`, purchase);
 
   }
 
