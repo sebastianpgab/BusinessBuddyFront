@@ -25,23 +25,23 @@
     <form>
       <div class="form-group">
         <label for="firstName">Imię:</label>
-        <input type="text" id="firstName" class="form-control" name="firstName" [(ngModel)]="firstName">
+        <input type="text" id="firstName" class="form-control" [(ngModel)]="customer.firstName" name="firstName" >
       </div>
       <div class="form-group">
         <label for="lastName">Nazwisko:</label>
-        <input type="text" id="lastName" class="form-control" name="lastName" [(ngModel)]="lastName">
+        <input type="text" id="lastName" class="form-control" name="lastName" [(ngModel)]="customer.lastName">
       </div>
       <div class="form-group">
         <label for="taxNumber">NIP:</label>
-        <input type="text" id="taxNumber" class="form-control" name="taxNumber" [(ngModel)]="taxNumber">
+        <input type="text" id="taxNumber" class="form-control" name="taxNumber" [(ngModel)]="customer.taxNumber">
       </div>
       <div class="form-group">
         <label for="phoneNumber">Numer telefonu:</label>
-        <input type="text" id="phoneNumber" class="form-control" name="phoneNumber" [(ngModel)]="phoneNumber">
+        <input type="text" id="phoneNumber" class="form-control" name="phoneNumber" [(ngModel)]="customer.phoneNumber">
       </div>
       <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" id="email" class="form-control" name="email" [(ngModel)]="email">
+        <input type="email" id="email" class="form-control" name="email" [(ngModel)]="customer.email">
       </div>
     </form>
   </div>
@@ -52,23 +52,23 @@
     <form>
       <div class="form-group">
         <label for="street">Ulica:</label>
-        <input type="text" id="street" class="form-control" name="street" [(ngModel)]="street">
+        <input type="text" id="street" class="form-control" name="street" [(ngModel)]="address.street">
       </div>
       <div class="form-group">
         <label for="buildingNumber">Numer budynku:</label>
-        <input type="text" id="buildingNumber" class="form-control" name="buildingNumber" [(ngModel)]="buildingNumber">
+        <input type="text" id="buildingNumber" class="form-control" name="buildingNumber" [(ngModel)]="address.buildingNumber">
       </div>
       <div class="form-group">
         <label for="apartmentNumber">Numer mieszkania:</label>
-        <input type="text" id="apartmentNumber" class="form-control" name="apartmentNumber" [(ngModel)]="apartmentNumber">
+        <input type="text" id="apartmentNumber" class="form-control" name="apartmentNumber" [(ngModel)]="address.apartmentNumber">
       </div>
       <div class="form-group">
         <label for="postalCode">Kod pocztowy:</label>
-        <input type="text" id="postalCode" class="form-control" name="postalCode" [(ngModel)]="postalCode" pattern="\d{2}-\d{3}">
+        <input type="text" id="postalCode" class="form-control" name="postalCode" [(ngModel)]="address.postalCode" pattern="\d{2}-\d{3}">
       </div>
       <div class="form-group">
         <label for="city">Miasto:</label>
-        <input type="text" id="city" class="form-control" name="city" [(ngModel)]="city">
+        <input type="text" id="city" class="form-control" name="city" [(ngModel)]="address.city">
       </div>
     </form>
   </div>
@@ -79,11 +79,11 @@
     <form>
       <div class="form-group">
         <label for="notes">Notatki:</label>
-        <textarea id="notes" class="form-control" name="notes" [(ngModel)]="notes"></textarea>
+        <textarea id="notes" class="form-control" name="notes" [(ngModel)]="orderDetail.notes"></textarea>
       </div>
       <div class="form-group">
         <label for="paymentMethod">Metoda płatności:</label>
-        <select id="paymentMethod" class="form-control" name="paymentMethod" [(ngModel)]="paymentMethod">
+        <select id="paymentMethod" class="form-control" name="paymentMethod" [(ngModel)]="orderDetail.paymentMethod">
           <option value="">Wybierz metodę płatności</option>
           <option value="cash">Gotówka</option>
           <option value="card">Karta</option>

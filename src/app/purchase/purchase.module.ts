@@ -14,7 +14,6 @@ const routes: Routes = [
   declarations: [ChooseProductsComponent, OrderConfigurationComponent],
   imports: [
     CommonModule,
-    ReactiveFormsModule,
     FormsModule,
     RouterModule.forChild(routes)
   ]

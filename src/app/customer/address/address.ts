@@ -1,10 +1,10 @@
 export interface Address {
-    id: number;
+    id?: number;
     street: string;
     buildingNumber?: string;
     apartmentNumber?: string;
     postalCode: string;
     city: string;
-    clientId: number;
+    clientId?: number;
     orderDetailId?: number;
 }

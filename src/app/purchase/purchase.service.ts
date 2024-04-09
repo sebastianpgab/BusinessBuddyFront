@@ -19,18 +19,19 @@ export class PurchaseService {
   searchControl = new FormControl();
   orderProducts: Array<OrderProduct> = [];
   orderDetail: OrderDetail | null = null;
+  order: Order | null = null;
   address: Address | null = null;
   customer: Customer | null = null;
-  purchase: Purchase | null= null;
+  purchase: Purchase | null = null;
 
 
   private apiBaseUrl = environment.apiBaseUrl;
 
   constructor(private messageService: MessageService, private httpClient: HttpClient) {
-    this.initializePurchase()
+    this.initializePurchase();
    }
 
-  initializePurchase(){
+   initializePurchase(){
     this.purchase =  {
       customer: null,
       address: null,
@@ -64,46 +65,8 @@ export class PurchaseService {
     }
   }
 
-  addCustomerToOrder(customer: Customer | null){
-    if(!customer){
-      this.messageService.error("Uzupełnij dane klienta")
-      return;
-    }
-    if(this.purchase){
-      this.purchase.customer = customer;
-    }    
-  }
-
-  addAddressToOrder(address: Address | null) {
-    if(!address) {
-      this.messageService.error("Uzupełnij adres klienta")
-    }
-
-    if(this.purchase){
-      this.purchase.address = address;
-    }
-  }
-
-  addOrderDetailToOrder(orderDetail: OrderDetail | null) {
-    if(!orderDetail) {
-      this.messageService.error("Uzupełnij dodatkowe informacje")
-    }
-
-    if(this.purchase){
-      this.purchase.orderDetail = orderDetail;
-    }
-  }
-
-  addOrder(order: Order | null) {
-    if (this.purchase?.customer && this.purchase.order && this.purchase.customer.id !== 0) {
-      this.purchase.order.clientId = this.purchase.customer.id;
-    }
-  }
-  
-
-  postPurchase(purchase: Purchase | null){
-    return this.httpClient.post(`${this.apiBaseUrl}/purchase`, purchase);
-
+  postPurchase(){
+    return this.httpClient.post(`${this.apiBaseUrl}/purchase`, this.purchase);
   }
 
 
