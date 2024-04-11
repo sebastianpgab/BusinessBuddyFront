@@ -8,7 +8,7 @@
           <div class="card-body" *ngIf="orderDetail">
             <p class="card-text">Data zamówienia: {{orderDetail.orderDate | date: 'dd/MM/yyyy'}}</p>
             <p class="card-text">Data realizacji: {{orderDetail.completionDate}}</p>
-            <p class="card-text">Status zamówienia: {{orderDetail.orderStatus}}</p>
+            <p class="card-text">Status zamówienia: {{orderDetail.status}}</p>
             <p class="card-text">Metoda płatności: {{orderDetail.paymentMethod}}</p>
             <p class="card-text">Kwota do zapłaty: {{orderDetail.finalAmount}}</p>
           </div>

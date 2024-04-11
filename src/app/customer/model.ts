@@ -5,7 +5,7 @@ export interface Customer{
  id?: number;
  firstName: string;
  lastName: string;
- taxNumber: number | null;
+ taxNumber: string | null;
  phoneNumber: string; 
  email: string;
 }

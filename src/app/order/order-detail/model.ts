@@ -1,15 +1,21 @@
 import { OrderProduct } from "src/app/order/order-products/model";
 import { Address } from "../../customer/address/address";
 
+enum PaymentMethod
+{
+    Cash,
+    CreditCard,
+    BankTransfer,
+}
+
 export interface OrderDetail {
 id?: number;
 orderDate?: Date;
 completionDate?: Date;
-orderStatus?: string;
+status?: number;
 notes?: string;
-paymentMethod?: string;
+paymentMethod?: number;
 finalAmount?: number;
 deliveryId?: number;
-deliveryAddress?: Address;
 orderId?: number;
 }
