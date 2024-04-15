@@ -3,10 +3,10 @@ import { Address } from "./address/address";
 
 export interface Customer{
  id?: number;
- firstName: string;
- lastName: string;
- taxNumber: string | null;
- phoneNumber: string; 
- email: string;
+ firstName?: string;
+ lastName?: string;
+ taxNumber?: string | null;
+ phoneNumber?: string; 
+ email?: string;
 }
 

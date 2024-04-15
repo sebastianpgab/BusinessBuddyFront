@@ -6,9 +6,9 @@ import { Order } from "../order/order/model";
 
 export interface Purchase {
 
-    customer: Customer | null;
-    address: Address | null;
-    order: Order | null;
-    orderDetail: OrderDetail | null;
-    orderProducts: Array<OrderProduct>;
+    ClientDto: Customer;
+    AddressDto: Address;
+    OrderDto: Order;
+    OrderDetailDto: OrderDetail;
+    OrderProductsDto: Array<OrderProduct>;
 }

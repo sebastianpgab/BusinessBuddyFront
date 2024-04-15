@@ -10,10 +10,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let selectedProduct of purchaseService.purchase?.orderProducts">
+      <tr *ngFor="let selectedProduct of purchaseService.purchase?.OrderProductsDto">
         <th>{{selectedProduct.product.productType}}</th>
         <th><input [(ngModel)]="selectedProduct.quantity"></th>
-        <th (click)="purchaseService.deleteProductFromOrder(selectedProduct.product.id)"><p class="clickable-item">Usuń</p></th>
+        <th (click)="selectedProduct.product.id !== undefined ? purchaseService.deleteProductFromOrder(selectedProduct.product.id) : null"><p class="clickable-item">Usuń</p></th>
       </tr>
     </tbody>
   </table>

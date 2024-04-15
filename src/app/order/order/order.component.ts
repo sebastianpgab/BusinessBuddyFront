@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Observable, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
-import { OrderProduct } from 'src/app/order/order-products/model';
 import { Product } from 'src/app/product/model';
 import { ProductService } from 'src/app/product/product.service';
 

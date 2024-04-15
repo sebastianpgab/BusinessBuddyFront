@@ -14,7 +14,7 @@ orderDate?: Date;
 completionDate?: Date;
 status?: number;
 notes?: string;
-paymentMethod?: number;
+paymentMethod?: PaymentMethod;
 finalAmount?: number;
 deliveryId?: number;
 orderId?: number;
