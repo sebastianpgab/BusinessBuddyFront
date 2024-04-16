@@ -15,7 +15,10 @@ export class PurchaseService {
 
   purchase: Purchase = {
     ClientDto: {},
-    AddressDto: {},
+    AddressDto: {
+      buildingNumber: '',
+      apartmentNumber: ''
+    },
     OrderDto: {},
     OrderDetailDto: {},
     OrderProductsDto: []
@@ -38,6 +41,7 @@ export class PurchaseService {
     };
 
     this.purchase.OrderProductsDto.push(orderProduct);
+    localStorage.setItem('order', JSON.stringify(this.purchase.OrderProductsDto));
     this.searchControl.reset(); 
     this.messageService.success("Dodano do zamówienia");
   }
@@ -48,6 +52,8 @@ export class PurchaseService {
     }
 
     this.purchase.OrderProductsDto = this.purchase?.OrderProductsDto.filter(orderProduct => orderProduct.productId !== productId);
+    localStorage.setItem('order', JSON.stringify(this.purchase.OrderProductsDto));
+    this.messageService.success("Produkt usunięty z zamówienia");
   }
 
   postPurchase(purchase: Purchase) {

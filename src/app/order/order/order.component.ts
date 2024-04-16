@@ -11,35 +11,8 @@ import { ProductService } from 'src/app/product/product.service';
 })
 export class OrderComponent implements OnInit {
 
-  searchControl = new FormControl();
-  products$: Array<Product> = [];
-  selectedProducts: Array<Product> = [];
-  quantity: number = 0;
-
   constructor(private productService: ProductService) { }
 
- 
-  ngOnInit() {
-    this.getProducts();
-  }
-
-  getProducts() {
-    this.productService.getProducts().subscribe(
-      (response) => {
-        this.products$ = response;
-      },
-      (error) => console.log(error)
-    );
-  }
-
-  addProductToOrder(product: Product) {
-    this.selectedProducts.push(product);
-    this.searchControl.setValue('');
-  }
-
-  deleteProductToOrder(productId: number){
-    this.selectedProducts = this.selectedProducts.filter( product => product.id !== productId);
-  }
-
+  ngOnInit() {}
 
 }

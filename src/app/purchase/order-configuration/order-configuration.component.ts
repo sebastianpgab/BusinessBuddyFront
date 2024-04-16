@@ -14,9 +14,12 @@ import { MessageService } from 'src/app/message.service';
 })
 export class OrderConfigurationComponent implements OnInit {
 
-  orderDetail: OrderDetail = {}; // Ensure these objects are initialized correctly according to their type definitions.
+  orderDetail: OrderDetail = {}; 
   customer: Customer = {};
-  address: Address = {};
+  address: Address = {
+    buildingNumber: '',
+    apartmentNumber: ''
+  };
   order: Order = {};
   orderProducts: OrderProduct[] = [];
 
@@ -28,6 +31,11 @@ export class OrderConfigurationComponent implements OnInit {
     this.order = this.purchaseService.purchase?.OrderDto || {};
     this.orderDetail = this.purchaseService.purchase?.OrderDetailDto || {};
     this.orderProducts = this.purchaseService.purchase?.OrderProductsDto || [];
+
+    const savedOrder = localStorage.getItem('order');
+    if (savedOrder) {
+      this.purchaseService.purchase.OrderProductsDto = JSON.parse(savedOrder);
+    }
   }
 
   deleteProduct(productId: number) {
@@ -43,7 +51,6 @@ export class OrderConfigurationComponent implements OnInit {
     this.purchaseService.postPurchase(this.purchaseService.purchase).subscribe(
       () => this.messageService.success("Dodano zamówienie"),
       error => {
-        console.error('Error adding purchase:', error);
         this.messageService.error("Nie udało się dodać zamówienia");
       }
     );

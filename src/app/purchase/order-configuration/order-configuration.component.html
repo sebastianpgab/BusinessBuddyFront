@@ -56,11 +56,11 @@
       </div>
       <div class="form-group">
         <label for="buildingNumber">Numer budynku:</label>
-        <input type="text" id="buildingNumber" class="form-control" name="buildingNumber" [(ngModel)]="address.buildingNumber">
+        <input type="text" id="buildingNumber" class="form-control" name="buildingNumber" [(ngModel)]="address.buildingNumber" [disabled]="address.apartmentNumber.length > 0">
       </div>
       <div class="form-group">
         <label for="apartmentNumber">Numer mieszkania:</label>
-        <input type="text" id="apartmentNumber" class="form-control" name="apartmentNumber" [(ngModel)]="address.apartmentNumber">
+        <input type="text" id="apartmentNumber" class="form-control" name="apartmentNumber" [(ngModel)]="address.apartmentNumber" [disabled]="address.buildingNumber.length > 0">
       </div>
       <div class="form-group">
         <label for="postalCode">Kod pocztowy:</label>
